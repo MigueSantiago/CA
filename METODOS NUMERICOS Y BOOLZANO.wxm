@@ -1,0 +1,148 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 11.08.0 ] */
+
+/* [wxMaxima: title   start ]
+Practica 5:Metodos numeros de resolucion de ecuaciones.
+
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: input   start ] */
+load(float);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+if numer#false then numer:false else numer:true;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fpprec:20;
+bfloat(0.1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fpprec:20;
+bfloat(1/10);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h:2.22045*10^(-17);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(1.0+h=1.0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g:15.0+10^(20);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+is(g-10^(20)=0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g-10^(20);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+remvalue(all);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+fpprec:40;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a:bfloat(1-(10)^(-30));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+b:a+1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a^2-1;
+a-1;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+c:((a^2-1)/(a-1));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+U
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: subsect start ]
+teorema de bolzano
+
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: comment start ]
+sea f:[a,b]------>R continua
+verificando que f(a).f(b)<0  existe c perteneciente a ]a,b[ tal que f(c)=0.
+
+   [wxMaxima: comment end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x):=exp(x)+log(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+solve(f(x)=0,x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+allroots(f(x));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+plot2d([f(x)],[x,0,2],[y,-2,6]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(f(x), x, 0.1, 1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(f(x),x,1,2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+g(x):= 8*sin(x)+1-(x^2/3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+plot2d([8*sin(x)+1-(x^2/3)], [x,-20,20],[y,-100,20])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(g(x),x,-5,-3);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(g(x),x,-3,0);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(g(x),x,2,4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(g(x),x,-6,-5);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+h(x):=tan(x)-(1/x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+plot2d([h(x)], [x,-20,20],[y,-10,10])$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(h(x),x,0.1,%pi/2);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

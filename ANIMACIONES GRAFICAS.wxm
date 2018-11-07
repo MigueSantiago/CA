@@ -1,0 +1,59 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 11.08.0 ] */
+
+/* [wxMaxima: title   start ]
+animaciones graficas
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: input   start ] */
+with_slider(k,makelist(i,i,1,20),
+        sin(x+k),[x,-%pi,%pi],[y,-1.1,1.1]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+with_slider(k,makelist(i,i,1,20),
+    sin(k*x),[x,-%pi,%pi],[y,-1.1,1.1]);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw2d;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+draw(plot2d);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+load(draw);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+with_slider_draw( 
+            t,makelist(%pi*i/10,i,0,20),
+            line_width=2,
+            parametric(cos(x),sin(x),x,0,t),
+            color=red,
+            point_size=2,
+            point_type=filled_circle,
+            points([[cos(t),sin(t)]]),
+            xrange=[-1,1],
+            yrange=[-1,1],
+            user_preamble="set size ratio 1");
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+with_slider_draw( 
+            t,makelist(%pi*i/10,i,0,20),
+            line_width=2,
+            parametric(cos(x),sin(x),x,0,t),
+            color=yellow,
+            head_length=0.2,head_angle=40,
+            vector([cos(t),sin(t)],[-sin(t),cos(t)]),
+            xrange=[-2,2],
+            yrange=[-2,2],
+            user_preamble="set size ratio 1");
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

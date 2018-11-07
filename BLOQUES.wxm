@@ -1,0 +1,90 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 11.08.0 ] */
+
+/* [wxMaxima: title   start ]
+Septima sesion:
+
+   [wxMaxima: title   end   ] */
+
+/* [wxMaxima: subsect start ]
+algo de bloques
+   [wxMaxima: subsect end   ] */
+
+/* [wxMaxima: input   start ] */
+block([a,b],a:3,b:14,a*b^2);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+a;
+b;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+block([a,b],
+        local(g),g(x):=x^3,
+        f(x):=x^2,
+        a:2,
+        b:3,
+        g(a+b));
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+f(x);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+s(n):=block([suma],
+            suma:0,
+            for i:1 thru n do(suma:suma+i^2),suma)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+s(1000);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+biseccion(expr,var,ext_inf,ext_sup):=
+block(
+[a,b,c,k,err:10^(-8),prec:10^(-9)],
+a:ext_inf,
+b:ext_sup,
+local(log2,f),
+define(log2(x),log(x)/log(2)),
+define(f(x),subst(x,var,expr)),
+pasos:ceiling(log2((b-a)/err)),
+if f(a)*f(b)>0 then
+error("Error:no hay cambio de signo");
+if abs(f(a)) < prec then return(a),
+if abs(f(b)) < prec then return(b),
+for k:1 thru pasos do
+(
+c:(a+b)/2,
+if abs(f(c)) < prec then return(c),
+if f(a)*f(c) < 0 then b:c else a:c
+),
+c)$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+if number#false then numer:false else numer:true;
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+define(f(x),(cos(x)+x^2)/4);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+find_root(f(x)-x,x,0,1);
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+x0:0$
+for i:1 thru 10 do(
+    x1:f(x0),
+    print("La iteracion",i,"vale",x1),
+    xo:x1
+            )$
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
